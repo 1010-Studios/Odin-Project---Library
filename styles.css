@@ -122,6 +122,33 @@ h4 {
 }
 
 /*---------------------
+New Book Button
+-----------------------*/
+
+.new--book {
+  flex-basis: 200px;
+  flex-shrink: 0;
+  height: 300px;
+  margin: 1.5%;
+  justify-content: center;
+}
+
+#btn__new__book {
+  text-align: center;
+  width: 100%;
+  height: 90%;
+  border-radius: 15px;
+  background-color: turquoise;
+  border: 1px solid whitesmoke;
+  box-shadow: 4px 2px 2px 0 whitesmoke;
+}
+
+#btn__new__book:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/*---------------------
 Sidebar
 -----------------------*/
 
@@ -155,32 +182,6 @@ Sidebar
   cursor: pointer;
 
   opacity: 0.8;
-}
-
-/*---------------------
-New Book Button
------------------------*/
-
-.new--book {
-  flex-basis: 200px;
-  flex-shrink: 0;
-  height: 300px;
-  margin: 1.5%;
-  justify-content: center;
-}
-
-#btn__new__book {
-  text-align: center;
-  width: 100%;
-  height: 90%;
-  border-radius: 15px;
-  background-color: turquoise;
-  border: none;
-}
-
-#btn__new__book:hover {
-  cursor: pointer;
-  opacity: 0.7;
 }
 
 /*---------------------
