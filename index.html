@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Odin Project - Library</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="section--main">
+      <div class="container__main">
+        <div class="container__lib" id="container__lib">
+          <div class="new--book">
+            <button id="btn__new__book">+New Book</button>
+          </div>
+        </div>
+      </div>
+      <div class="container__sidebar">
+        <div class="stats__section">
+          <!-- <h3>Sidebar!</h3> -->
+          <p>
+            <span id="read__stats">
+              Books Read
+              <br /><span id="books__read"></span>
+              /
+              <span id="books__total"></span
+            ></span>
+          </p>
+        </div>
+        <div class="sidebar__buttons">
+          <button id="BTN__default">
+            <h6>Click to Load some sample books I created!</h6>
+          </button>
+          <button class="del--local" id="BTN__DEL">DELETE LOCAL DATA</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal hidden" id="win__modal">
+      <button id="BTN__close">X</button>
+      <form class="modal__form">
+        <input
+          class="modal__input"
+          id="name"
+          type="text"
+          placeholder="Book Name"
+          required
+        />
+        <input
+          class="modal__input"
+          id="author"
+          type="text"
+          placeholder="Author"
+          required
+        />
+        <input
+          class="modal__input"
+          id="pages"
+          type="number"
+          placeholder="Pages"
+          required
+        />
+
+        <input class="modal__input" id="read" type="checkbox" />
+        <label for="read" id="read__checkbox">Read?</label>
+        <button type="submit" id="BTN__create">Create Book</button>
+      </form>
+    </div>
+
+    <script src="script.js" async defer></script>
+  </body>
+</html>

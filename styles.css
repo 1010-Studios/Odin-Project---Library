@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.section--main {
+  display: flex;
+  height: 100vh;
+  margin: auto;
+  background-image: linear-gradient(to right, turquoise, seashell, seashell);
+}
+
+.container__main {
+  flex: 5;
+  /* overflow: auto; */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  justify-content: center;
+  align-content: center;
+}
+
+.container__lib {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*---------------------
+Book Items
+-----------------------*/
+
+.bookID {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 125px;
+  flex-shrink: 0;
+  height: 220px;
+  margin: 0.3rem;
+  justify-content: center;
+  border: 2px dotted lightblue;
+  text-align: center;
+  transition: 600ms;
+  background-color: darkseagreen;
+  border-radius: 12px;
+}
+
+.book--deets {
+  padding-top: 0.2rem;
+  flex: 4;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.button--container {
+  background-color: coral;
+  height: 3rem;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin: 0;
+}
+
+h4 {
+  font-size: small;
+}
+
+.book--read {
+  opacity: 0.2;
+}
+
+.tag,
+.btn--del {
+  text-align: center;
+  height: 1.2rem;
+  margin-top: 4px;
+  width: 80%;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: black;
+  opacity: 0.6;
+  transition: 400ms;
+}
+
+.tag--read {
+  background-color: coral;
+  color: black;
+  opacity: 1;
+}
+
+.btn--del {
+  max-width: 4rem;
+}
+
+.btn--del {
+  color: red;
+}
+
+.btn--del:hover {
+  background-color: red;
+  color: black;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.tag:hover {
+  opacity: 1;
+  color: black;
+  background: seashell;
+  cursor: pointer;
+}
+
+/*---------------------
+Sidebar
+-----------------------*/
+
+.container__sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  color: black;
+  background-image: linear-gradient(to right, seashell, turquoise);
+}
+
+.stats__section {
+  border-bottom: 2px solid orangered;
+}
+
+.del--local,
+#BTN__default {
+  color: seagreen;
+  background: lightgray;
+  border: none;
+  border-radius: 12px;
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
+.del--local:hover,
+#BTN__default:hover {
+  cursor: pointer;
+
+  opacity: 0.8;
+}
+
+/*---------------------
+New Book Button
+-----------------------*/
+
+.new--book {
+  flex-basis: 125px;
+  flex-shrink: 0;
+  height: 220px;
+  margin: 1.5%;
+  justify-content: center;
+}
+
+#btn__new__book {
+  text-align: center;
+  width: 98%;
+  height: 98%;
+  border-radius: 15px;
+  background-color: turquoise;
+}
+
+#btn__new__book:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/*---------------------
+Pop up Window
+-----------------------*/
+
+.modal {
+  position: absolute;
+  text-align: center;
+  height: 80vh;
+  width: 70vw;
+  top: 04%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid darkcyan;
+  background-color: lightgreen;
+  border-radius: 15px;
+  z-index: 999;
+}
+
+#BTN__close {
+  position: relative;
+  left: 47%;
+  top: 1%;
+  border: none;
+  background: none;
+}
+
+#BTN__close:hover {
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10%;
+}
+
+#read {
+  display: none;
+}
+
+#read:hover {
+  cursor: pointer;
+}
+
+#read__checkbox {
+  border-radius: 15px;
+  width: 6rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid coral;
+}
+
+#read__checkbox:hover {
+  cursor: pointer;
+}
+
+#read:checked + #read__checkbox {
+  background-color: deepskyblue;
+  border: 2px solid deepskyblue;
+}
+
+#BTN__create {
+  width: 12rem;
+  height: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  background: coral;
+  border: none;
+}
+
+.modal__input {
+  margin: 10px;
+  height: 2rem;
+}
+
+.hidden {
+  display: none;
+}
