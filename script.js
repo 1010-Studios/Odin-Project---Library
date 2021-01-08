@@ -147,32 +147,63 @@ function printLibrary() {
   clearPrint();
 
   for (i of myLibrary) {
-    const createDiv = document.createElement("div");
-    createDiv.className = "bookID";
-    if (i.read === true) createDiv.classList.add("book--read");
-    const createTitle = document.createElement("h3");
-    const createAuthor = document.createElement("h4");
-    const createPages = document.createElement("h4");
+    //Container Creation
+    const createDIV = document.createElement("div");
+    createDIV.className = "bookID";
+    $library.prepend(createDIV);
+    const $deetsDiv = document.createElement("div");
+    $deetsDiv.className = "book--deets";
+    createDIV.append($deetsDiv);
+
+    //Title
+    const $titlediv = document.createElement("div");
+    const $createTitle = document.createElement("h3");
+    $titlediv.className = "deets--title";
+    $deetsDiv.append($titlediv);
+    $createTitle.innerHTML = i.title;
+    $titlediv.append($createTitle);
+
+    //Author
+    const $authorDiv = document.createElement("div");
+    const $createAuthor = document.createElement("h4");
+    $authorDiv.className = "deets--author";
+    $createAuthor.innerHTML = `by ${i.author}`;
+    $deetsDiv.append($authorDiv);
+    $authorDiv.append($createAuthor);
+
+    //Pages
+    const $pagesDiv = document.createElement("div");
+    const $createPages = document.createElement("h4");
+    $pagesDiv.className = "deets--pages";
+    $createPages.innerHTML = `${i.pages} pages`;
+    $deetsDiv.append($pagesDiv);
+    $pagesDiv.append($createPages);
+
+    //Read Button
     const createRead = document.createElement("button");
-    const createbuttonDiv = document.createElement("div");
-    const createHeadingDiv = document.createElement("div");
-    createHeadingDiv.className = "book--deets";
-    createbuttonDiv.className = "button--container";
-    $library.prepend(createDiv);
-    createRead.classList = `tag ${i.read ? "tag--read" : ""}`;
+    if (i.read === true) createDIV.classList.add("book--read");
     createRead.innerHTML = i.read ? "Read" : "Unread";
-    createTitle.innerHTML = i.title;
-    createAuthor.innerHTML = `by ${i.author}`;
-    createPages.innerHTML = `${i.pages} pages`;
     createRead.id = i.id;
-    createDiv.append(createHeadingDiv, createbuttonDiv);
-    createHeadingDiv.append(createTitle, createAuthor, createPages);
+
+    //Delete Button
     const createDeleteButton = document.createElement("button");
     createDeleteButton.className = "btn--del";
-    createDeleteButton.innerHTML = "Delete";
+    createDeleteButton.innerHTML = "Remove from Library";
     createDeleteButton.id = i.id;
+
+    const createbuttonDiv = document.createElement("div");
+
+    createbuttonDiv.className = "button--container";
+
+    createRead.classList = `tag ${i.read ? "tag--read" : ""}`;
+
+    createDIV.append(createbuttonDiv);
+    // $deetsDiv.append($createAuthor, createPages);
+
     createbuttonDiv.append(createRead, createDeleteButton);
   }
+
+  //Set Buttons
   const delButtons = document.querySelectorAll(".btn--del");
   delButtons.forEach((i) => i.addEventListener("click", deleteBook));
   const readButtons = document.querySelectorAll(".tag");

@@ -13,7 +13,6 @@
 
 .container__main {
   flex: 5;
-  /* overflow: auto; */
   overflow-y: auto;
   scrollbar-width: thin;
   justify-content: center;
@@ -32,11 +31,12 @@ Book Items
 .bookID {
   display: flex;
   flex-direction: column;
-  flex-basis: 125px;
+  flex-basis: 200px;
   flex-shrink: 0;
-  height: 220px;
+  height: 300px;
   margin: 0.3rem;
   justify-content: center;
+  align-content: space-between;
   border: 2px dotted lightblue;
   text-align: center;
   transition: 600ms;
@@ -45,10 +45,21 @@ Book Items
 }
 
 .book--deets {
-  padding-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   flex: 4;
   overflow-y: auto;
   scrollbar-width: thin;
+}
+
+.deets--title,
+.deets--author {
+  margin-top: 40px;
+}
+
+.deets--pages {
+  margin-top: 10px;
 }
 
 .button--container {
@@ -59,12 +70,16 @@ Book Items
   margin: 0;
 }
 
+h3 {
+  font-size: larger;
+}
+
 h4 {
   font-size: small;
 }
 
 .book--read {
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 .tag,
@@ -88,11 +103,8 @@ h4 {
 }
 
 .btn--del {
-  max-width: 4rem;
-}
-
-.btn--del {
-  color: red;
+  color: black;
+  opacity: 0.9;
 }
 
 .btn--del:hover {
@@ -129,6 +141,7 @@ Sidebar
 
 .del--local,
 #BTN__default {
+  font-size: large;
   color: seagreen;
   background: lightgray;
   border: none;
@@ -149,24 +162,25 @@ New Book Button
 -----------------------*/
 
 .new--book {
-  flex-basis: 125px;
+  flex-basis: 200px;
   flex-shrink: 0;
-  height: 220px;
+  height: 300px;
   margin: 1.5%;
   justify-content: center;
 }
 
 #btn__new__book {
   text-align: center;
-  width: 98%;
-  height: 98%;
+  width: 100%;
+  height: 90%;
   border-radius: 15px;
   background-color: turquoise;
+  border: none;
 }
 
 #btn__new__book:hover {
   cursor: pointer;
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 /*---------------------
@@ -178,6 +192,8 @@ Pop up Window
   text-align: center;
   height: 80vh;
   width: 70vw;
+  max-width: 600px;
+  max-height: 700px;
   top: 04%;
   left: 50%;
   transform: translateX(-50%);
